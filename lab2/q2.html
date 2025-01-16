@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Page with Bootstrap</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 20px;
+        }
+        .section {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .top-section {
+            background-color: #f8f9fa;
+        }
+        .bottom-section {
+            background-color: #e9ecef;
+        }
+        .bottom-part {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Section -->
+    <div class="container top-section">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section text-center">
+                    <h2>Top Section</h2>
+                    <p>Welcome to the top section of the page.</p>
+
+                    <!-- Input Group Example -->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+
+                    <!-- Badge Example -->
+                    <div>
+                        <span class="badge badge-primary">New Feature</span>
+                    </div>
+
+                    <!-- Button Example -->
+                    <div class="mt-3">
+                        <button class="btn btn-success">Get Started</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="container bottom-section">
+        <div class="row">
+            <div class="col-md-4 bottom-part">
+                <div class="section">
+                    <h4>Left Part</h4>
+
+                    <!-- Input Group with Button -->
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search..." aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 bottom-part">
+                <div class="section">
+                    <h4>Center Part</h4>
+
+                    <!-- Button Group -->
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-info">Option 1</button>
+                        <button type="button" class="btn btn-info">Option 2</button>
+                        <button type="button" class="btn btn-info">Option 3</button>
+                    </div>
+
+                    <!-- Badge Example in Bottom -->
+                    <div class="mt-3">
+                        <span class="badge badge-secondary">Important</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 bottom-part">
+                <div class="section">
+                    <h4>Right Part</h4>
+
+                    <!-- Input Example -->
+                    <input type="text" class="form-control mb-3" placeholder="Your email">
+
+                    <!-- Button Example -->
+                    <button class="btn btn-warning">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+

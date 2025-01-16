@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Bio-Data Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 50%;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      margin-bottom: 20px;
+      border-collapse: collapse;
+    }
+
+    td, th {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    input[type="text"], input[type="email"], input[type="tel"], textarea {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+      margin-right: 8px;
+    }
+
+    label {
+      font-size: 16px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .button-group {
+      text-align: center;
+    }
+
+    input[type="submit"], input[type="reset"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    input[type="submit"]:hover, input[type="reset"]:hover {
+      background-color: #45a049;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .checkbox-group label {
+      width: 45%;
+      margin-right: 20px;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Student Bio-Data Form</h2>
+
+    <form action="#" method="post">
+      <!-- Student Details Table -->
+      <table>
+        <tr>
+          <th colspan="2">Personal Information</th>
+        </tr>
+        <tr>
+          <td><label for="name">Full Name:</label></td>
+          <td><input type="text" id="name" name="name" required></td>
+        </tr>
+        <tr>
+          <td><label for="email">Email:</label></td>
+          <td><input type="email" id="email" name="email" required></td>
+        </tr>
+        <tr>
+          <td><label for="phone">Phone Number:</label></td>
+          <td><input type="tel" id="phone" name="phone" required></td>
+        </tr>
+        <tr>
+          <td><label for="address">Address:</label></td>
+          <td><textarea id="address" name="address" required></textarea></td>
+        </tr>
+        <tr>
+          <td><label>Gender:</label></td>
+          <td>
+            <label for="male">
+              <input type="radio" id="male" name="gender" value="Male"> Male
+            </label>
+            <label for="female">
+              <input type="radio" id="female" name="gender" value="Female"> Female
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Hobbies:</label></td>
+          <td class="checkbox-group">
+            <label><input type="checkbox" name="hobbies" value="Reading"> Reading</label>
+            <label><input type="checkbox" name="hobbies" value="Sports"> Sports</label>
+            <label><input type="checkbox" name="hobbies" value="Music"> Music</label>
+            <label><input type="checkbox" name="hobbies" value="Traveling"> Traveling</label>
+            <label><input type="checkbox" name="hobbies" value="Coding"> Coding</label>
+          </td>
+        </tr>
+      </table>
+
+      <!-- Submit and Reset Buttons -->
+      <div class="button-group">
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>

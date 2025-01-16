@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Timetable</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f4f4f9;
+      font-family: Arial, sans-serif;
+      padding-top: 50px;
+    }
+
+    .container {
+      margin-top: 30px;
+    }
+
+    .carousel-item {
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .table th, .table td {
+      text-align: center;
+    }
+
+    .table {
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .week-header {
+      background-color: #007bff;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+      filter: invert(100%);
+    }
+
+    .carousel-indicators li {
+      background-color: #007bff;
+    }
+
+    .carousel-indicators .active {
+      background-color: #0056b3;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2 class="text-center">Class Timetable</h2>
+
+  <!-- Carousel for switching between weeks -->
+  <div id="timetableCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#timetableCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#timetableCarousel" data-slide-to="1"></li>
+      <li data-target="#timetableCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner">
+      <!-- Week 1 -->
+      <div class="carousel-item active">
+        <h3 class="text-center week-header">Week 1</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Monday</th>
+              <th>Tuesday</th>
+              <th>Wednesday</th>
+              <th>Thursday</th>
+              <th>Friday</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>9:00 AM - 10:00 AM</td>
+              <td>Math</td>
+              <td>English</td>
+              <td>History</td>
+              <td>Science</td>
+              <td>PE</td>
+            </tr>
+            <tr>
+              <td>10:30 AM - 11:30 AM</td>
+              <td>Physics</td>
+              <td>Geography</td>
+              <td>Chemistry</td>
+              <td>Biology</td>
+              <td>Math</td>
+            </tr>
+            <tr>
+              <td>12:00 PM - 1:00 PM</td>
+              <td>History</td>
+              <td>Music</td>
+              <td>English</td>
+              <td>Art</td>
+              <td>PE</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Week 2 -->
+      <div class="carousel-item">
+        <h3 class="text-center week-header">Week 2</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Monday</th>
+              <th>Tuesday</th>
+              <th>Wednesday</th>
+              <th>Thursday</th>
+              <th>Friday</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>9:00 AM - 10:00 AM</td>
+              <td>Math</td>
+              <td>Science</td>
+              <td>History</td>
+              <td>Music</td>
+              <td>PE</td>
+            </tr>
+            <tr>
+              <td>10:30 AM - 11:30 AM</td>
+              <td>Geography</td>
+              <td>Physics</td>
+              <td>Math</td>
+              <td>Biology</td>
+              <td>English</td>
+            </tr>
+            <tr>
+              <td>12:00 PM - 1:00 PM</td>
+              <td>Art</td>
+              <td>English</td>
+              <td>PE</td>
+              <td>Chemistry</td>
+              <td>History</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Week 3 -->
+      <div class="carousel-item">
+        <h3 class="text-center week-header">Week 3</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Monday</th>
+              <th>Tuesday</th>
+              <th>Wednesday</th>
+              <th>Thursday</th>
+              <th>Friday</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>9:00 AM - 10:00 AM</td>
+              <td>Math</td>
+              <td>English</td>
+              <td>Physics</td>
+              <td>Art</td>
+              <td>PE</td>
+            </tr>
+            <tr>
+              <td>10:30 AM - 11:30 AM</td>
+              <td>Geography</td>
+              <td>History</td>
+              <td>Math</td>
+              <td>Chemistry</td>
+              <td>Science</td>
+            </tr>
+            <tr>
+              <td>12:00 PM - 1:00 PM</td>
+              <td>Music</td>
+              <td>Biology</td>
+              <td>English</td>
+              <td>History</td>
+              <td>PE</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Carousel Controls -->
+    <a class="carousel-control-prev" href="#timetableCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#timetableCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+</div>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
