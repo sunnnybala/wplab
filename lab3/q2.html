@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Clock and Wishes</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .clock {
+            font-size: 60px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .greeting {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .container {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .greeting span {
+            font-weight: bold;
+        }
+
+        #clock {
+            font-size: 50px;
+            color: #ff6347;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="greeting" class="greeting"></div>
+        <div id="clock" class="clock"></div>
+    </div>
+
+    <script>
+        
+        function getGreeting() {
+            const now = new Date();
+            const hours = now.getHours();
+
+            let greeting = '';
+            if (hours >= 0 && hours < 12) {
+                greeting = 'Good Morning';
+            } else if (hours >= 12 && hours < 17) {
+                greeting = 'Good Afternoon';
+            } else if (hours >= 17 && hours < 21) {
+                greeting = 'Good Evening';
+            } else {
+                greeting = 'Good Night';
+            }
+
+            alert(greeting);
+
+            document.getElementById("greeting").innerHTML = `<span>${greeting}</span>, welcome to our website!`;
+        }
+
+        function startClock() {
+            setInterval(() => {
+                const now = new Date();
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                const seconds = String(now.getSeconds()).padStart(2, '0');
+                document.getElementById("clock").textContent = `${hours}:${minutes}:${seconds}`;
+            }, 1000);  
+        }
+
+        
+        getGreeting();
+        startClock();
+    </script>
+
+</body>
+</html>
