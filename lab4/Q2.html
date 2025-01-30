@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Calculator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #770d0d;
+            font-family: Arial, sans-serif;
+        }
+        .calculator {
+            width: 300px;
+            background: #8d8787;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .screen {
+            width: 280px;
+            height: 60px;
+            text-align: right;
+            padding: 10px;
+            font-size: 24px;
+            border: none;
+            border-radius: 10px;
+            background: #444;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        button {
+            width: 100%;
+            height: 60px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background: #666;
+            color: white;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #888;
+        }
+        .operator {
+            background: #ff9500;
+        }
+        .operator:hover {
+            background: #ffb700;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" class="screen" id="display" readonly>
+        <div class="buttons">
+            <button class="clear">C</button>
+            <button class="operator" data-value="/">÷</button>
+            <button class="operator" data-value="*">×</button>
+            <button class="operator" data-value="-">−</button>
+            <button data-value="7">7</button>
+            <button data-value="8">8</button>
+            <button data-value="9">9</button>
+            <button class="operator" data-value="+">+</button>
+            <button data-value="4">4</button>
+            <button data-value="5">5</button>
+            <button data-value="6">6</button>
+            <button data-value="1">1</button>
+            <button data-value="2">2</button>
+            <button data-value="3">3</button>
+            <button data-value="0">0</button>
+            <button data-value=".">.</button>
+            <button class="equal">=</button>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            let screen = $("#display");
+            let currentInput = "";
+            
+            $("button").click(function() {
+                let value = $(this).attr("data-value");
+                
+                if ($(this).hasClass("clear")) {
+                    currentInput = "";
+                } else if ($(this).hasClass("equal")) {
+                    try {
+                        currentInput = eval(currentInput).toString();
+                    } catch {
+                        currentInput = "Error";
+                    }
+                } else {
+                    currentInput += value;
+                }
+                screen.val(currentInput);
+            });
+        });
+    </script>
+</body>
+</html>

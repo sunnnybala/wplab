@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Card Designer</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            display: flex;
+        }
+        #controls {
+            width: 300px;
+            padding: 10px;
+            border-right: 2px solid #ccc;
+        }
+        #card {
+            width: 300px;
+            height: 400px;
+            border: 2px solid black;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: yellow;
+        }
+        .border-none {
+            border: none;
+        }
+        .border-double {
+            border: 5px double black;
+        }
+        .border-solid {
+            border: 5px solid black;
+        }
+        img {
+            width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <div id="controls">
+            <label>Choose a background color:</label>
+            <select id="bgColor">
+                <option value="yellow">Yellow</option>
+                <option value="pink">Pink</option>
+                <option value="lightblue">Light Blue</option>
+            </select><br><br>
+
+            <label>Choose a font:</label>
+            <select id="fontFamily">
+                <option value="Verdana">Verdana</option>
+                <option value="Arial">Arial</option>
+                <option value="Times New Roman">Times New Roman</option>
+            </select><br><br>
+
+            <label>Specify a numeric font size:</label>
+            <input type="number" id="fontSize" value="25"><br><br>
+
+            <label>Choose a border style:</label><br>
+            <input type="radio" name="borderStyle" value="none" checked> None
+            <input type="radio" name="borderStyle" value="double"> Double
+            <input type="radio" name="borderStyle" value="solid"> Solid<br><br>
+
+            <input type="checkbox" id="addImage" checked> Add the Default Picture<br><br>
+
+            <label>Enter the greeting text below:</label><br>
+            <textarea id="greetingText" rows="3">Happy Birthday, and many more</textarea><br><br>
+
+            <button id="updateCard">Update</button>
+        </div>
+
+        <div id="card">
+            <p id="greeting">Happy Birthday, and many more</p>
+            <img id="cakeImage" src="https://files.creamats.com/cache/products/images/2/j/a/600x600/0/5/673f3ddc07046fac67f1033e99bae8821ef675/80605-birthday-stamp.webp" alt="Birthday Cake">
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#updateCard').click(function () {
+                // Update background color
+                $('#card').css('background-color', $('#bgColor').val());
+
+                // Update font style and size
+                $('#greeting').css({
+                    'font-family': $('#fontFamily').val(),
+                    'font-size': $('#fontSize').val() + 'px'
+                });
+
+                // Update border style
+                let borderClass = $('input[name="borderStyle"]:checked').val();
+                $('#card').removeClass('border-none border-double border-solid').addClass('border-' + borderClass);
+
+                // Update greeting text
+                $('#greeting').text($('#greetingText').val());
+
+                // Toggle image
+                if ($('#addImage').is(':checked')) {
+                    $('#cakeImage').show();
+                } else {
+                    $('#cakeImage').hide();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
